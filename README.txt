@@ -1,5 +1,5 @@
 This project is a simple flask API for internal department of the bank.
-Operating procedure:    1)activate file start.sh
+Operating procedure:    1)execute file start.sh
 			2)open new command console
 			3)enter one of four commands into the console
 Commands:
