@@ -1,0 +1,7 @@
+dataclasses
+uuid
+flask
+jsonify
+flask_api
+threading
+sqlite3
