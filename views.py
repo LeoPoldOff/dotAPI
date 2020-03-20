@@ -6,7 +6,8 @@ from threading import Thread
 import sqlite3
 
 
-class MyThread(Thread):
+# thread for refreshing holds
+class RefreshThread(Thread):
     def __init__(self, name):
         Thread.__init__(self)
         self.name = name
@@ -36,8 +37,9 @@ class MyThread(Thread):
         self.run()
 
 
-my_thread = MyThread('mt')
-my_thread.start()
+# start refreshing holds
+my_refresh_thread = RefreshThread('x')
+my_refresh_thread.start()
 
 
 @app.route('/api/status/<string:num>', methods=['GET'])
@@ -114,7 +116,7 @@ def add_money(num, sum):
 
 
 @app.route('/api/substract/<string:num>/<int:sum>', methods=['GET'])
-def substruct_money(num, sum):
+def substract_money(num, sum):
     conn = sqlite3.connect("mydatabase.db")
     cursor = conn.cursor()
     sql = "SELECT * FROM clientBase WHERE number=?"
